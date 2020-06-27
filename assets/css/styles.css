@@ -1,0 +1,26 @@
+input {
+  /*font-size: 10px;*/
+}
+
+.campoNumerico {
+  width: 70px;
+}
+
+#tablaConceptos td {
+  text-align: center;
+}
+
+.campoExtendido {
+  width: 95%;
+}
+
+label span {
+  color: red;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  font-size: 11px;
+}
+

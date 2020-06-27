@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Diseño 1</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-responsive table-bordered">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="5">Datos de Facturación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label style="clear: both;display: block;"><span>*</span>RFC</label><input type="text" class="form-control form-control-sm"></td>
+                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="campoExtendido form-control form-control-sm"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="clear: both;display: block;"><span>*</span>Email</label><input type="text" class="form-control form-control-sm"></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar--</option><option value="01">(01) Efectivo</option><option value="28">(28) Tarjeta de Débito</option><option value="02">(02) Cheque</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Método de Pago</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
+                        <td
+                            colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><strong>Datos Opcionales</strong></td>
+                    </tr>
+                    <tr>
+                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar Estado--</option></select></td>
+                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
+                        <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm"></textarea></td>
+                        <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm"></td>
+                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive table-bordered table-striped" id="tablaConceptos">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Clave</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Costo Unitario</th>
+                        <th>Descuento</th>
+                        <th>IVA</th>
+                        <th>Total</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="text-align: center;"><button class="btn btn-info" id="botonAgregarConcepto" type="button" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
+        <div class="table-responsive" style="width: 300px;float: right;">
+            <table class="table">
+                <thead>
+                    <tr></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Importe</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Descuento</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>IVA</td>
+                        <td>$0.00</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>$0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
