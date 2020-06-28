@@ -30,7 +30,10 @@
                         <td colspan="5"><strong>Datos Opcionales</strong></td>
                     </tr>
                     <tr>
-                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar Estado--</option></select></td>
+                        <!-- Se inserto el query para la inserccion de datos de la tabla estados -->
+                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm">
+                        <option value="0" selected="">Seleccionar Estado</option><?php $query = "SELECT * FROM estado"; $result = mysqli_query($conn, $query); while ($row = mysqli_fetch_assoc($result)) {?><option value="index.php?id=<?php echo $row['id']?>"><?php echo $row['onombre'];?></option>';<?php } ?></select></td>   
+
                         <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
                         <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm"></textarea></td>
                         <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm"></td>
