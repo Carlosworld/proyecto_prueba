@@ -1,6 +1,7 @@
 <?php include("db.php");?>
-<?php include('includes/header.php');?>
-<body>
+<?php include('header.php');?>  
+
+
     <div class="container p-4">
         <div class="table-responsive table-bordered">
             <table class="table">
@@ -31,10 +32,13 @@
                     </tr>
                     <tr>
                         <!-- Se inserto el query para la inserccion de datos de la tabla estados -->
-                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm">
-                        <option value="0" selected="">Seleccionar Estado</option><?php $query = "SELECT * FROM estado"; $result = mysqli_query($conn, $query); while ($row = mysqli_fetch_assoc($result)) {?><option value="index.php?id=<?php echo $row['id']?>"><?php echo $row['onombre'];?></option>';<?php } ?></select></td>   
+                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm" id = "cbx_estados">
+                        <option value="0" selected="">Seleccionar Estado</option> <!--<php $query = "SELECT * FROM estado"; $result = mysqli_query($conn, $query); while ($row = mysqli_fetch_assoc($result)) ?<option value="index.php?id=<php echo $row['id']?>"><php echo $row['onombre'];?></option>';<php } ?>--></select></td>  
 
-                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
+                        <!--Se insertan los datos de la tabla municipio -->
+                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select id="cbx_municipio"class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
+
+
                         <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm"></textarea></td>
                         <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm"></td>
                         <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="campoNumerico form-control form-control-sm"></td>
@@ -131,5 +135,11 @@
             </table>
         </div>
     </div>
-</body>
-<?php include('includes/footer.php');?>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
+ <?php include('footer.php');?>  
