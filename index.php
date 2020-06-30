@@ -17,13 +17,27 @@
                     </tr>
                     <tr>
                         <td><label style="clear: both;display: block;"><span>*</span>Email</label><input type="text" class="form-control form-control-sm"></td>
-                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar--</option><option value="01">(01) Efectivo</option><option value="28">(28) Tarjeta de Débito</option><option value="02">(02) Cheque</option></select></td>
-                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm"></td>
+
+
+
+                        <!-- En este apartado tenemo que bloquear el metodo de pago que no concuerde con la forma de pago que se solicite-->
+
+                       
+
+
+
+                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select"><option value="1" selected="" id="1">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
+
+
+                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm" id="input" disabled></td>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
-                        <td><label style="clear: both;display: block;"><span>*</span>Método de Pago</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
+
+
+                        <td><label style="clear: both;display: block;"><span>*</span>Método de Pago</label>
+                        <select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
                         <td
                             colspan="3"></td>
                     </tr>
@@ -135,10 +149,15 @@
             </table>
         </div>
     </div>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    
+
+
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script> -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  </script>  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  -->
   <script type="text/javascript" src="index.js"></script>
   <!-- <script src="assets/js/jquery.min.js"></script> -->
     <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->

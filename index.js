@@ -33,3 +33,23 @@ $(document).ready(function(){
     // })
   
   })
+
+
+  $(document).ready(function() {
+    $('#input').on('keyup', function() {
+        if ($('#input').val() == "") {
+            $('#select').prop('disabled', false);
+        } else {
+            $('#select').prop('disabled', true );
+        }
+    });
+    $('#select').on('change', function() {
+        if (parseInt($('#select').val()) === 0) {
+            $('#input').prop('disabled', false);
+        } else {
+            $('#input').prop('disabled', true);
+        }
+    });
+})
+
+
