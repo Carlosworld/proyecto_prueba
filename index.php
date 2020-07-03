@@ -1,9 +1,9 @@
 <?php include("db.php");?>
 <?php include('header.php');?>  
 
-
-    <div class="container p-4">
-        <div class="table-responsive table-bordered">
+<div class="container p-4">
+    <div class="table-responsive table-bordered">
+        <form id="formID" name="emp" method="post"> 
             <table class="table" >
                 <thead>
                     <tr>
@@ -17,13 +17,14 @@
                         
                         </td>
 
-                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="campoExtendido form-control form-control-sm" id="nombre" name="nombre">
+                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="campoExtendido form-control form-control-sm" id="razonSocial" name="razon-social">
                         
                         </td>
 
                     </tr>
                     <tr>
-                        <td><label style="clear: both;display: block;"><span>*</span>Email</label><input type="text" class="form-control form-control-sm"></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Email</label>
+                        <input type="email" class="form-control form-control-sm" id="email" name="email"></td>
 
 
 
@@ -33,18 +34,18 @@
 
 
 
-                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select"><option value="1" selected="" id="1">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select" name="forma-pago"><option value="1" selected="" id="1">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
 
 
-                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm" id="input" disabled></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm" id="numeroCuenta" name="numero-cuenta" disabled></td>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm" id="cfdi" name="CFDI"><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
 
 
                         <td><label style="clear: both;display: block;"><span>*</span>Método de Pago</label>
-                        <select class="form-control form-control-sm"><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
+                        <select class="form-control form-control-sm" id="metodoPago" name="metodo-pago"><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
                         <td
                             colspan="3"></td>
                     </tr>
@@ -53,22 +54,24 @@
                     </tr>
                     <tr>
                         <!-- Se inserto el query para la inserccion de datos de la tabla estados -->
-                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm" id = "cbx_estados">
-                        <option value="0" selected="">Seleccionar Estado</option> <!--<php $query = "SELECT * FROM estado"; $result = mysqli_query($conn, $query); while ($row = mysqli_fetch_assoc($result)) ?<option value="index.php?id=<php echo $row['id']?>"><php echo $row['onombre'];?></option>';<php } ?>--></select></td>  
+                        <td><label style="clear: both;display: block;">Estado</label><select class="form-control form-control-sm" id = "cbx_estados" name="estado">
+                        <option value="0" selected="">Seleccionar Estado</option></select></td>  
 
                         <!--Se insertan los datos de la tabla municipio -->
-                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select id="cbx_municipio"class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
+                        <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select id="cbx_municipio" name="municipio"class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
 
 
                         <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm" id="dir" name="dir"></textarea></td>
 
 
-                        <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm"></td>
-                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm" id="col" name="colonia"></td>
+
+                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="campoNumerico form-control form-control-sm" id="cp" name="codigo-postal"></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+         
+    </div>
         <div class="table-responsive table-bordered table-striped" id="tablaConceptos">
             <table class="table">
                 <thead>
@@ -127,7 +130,7 @@
                 </tbody>
             </table>
         </div>
-        <div style="text-align: center;"><button class="btn btn-info" id="botonAgregarConcepto" type="button" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
+        <div style="text-align: center;"><button class="btn btn-info" id="botonAgregarConcepto" type="submit" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
         <div class="table-responsive" style="width: 300px;float: right;">
             <table class="table">
                 <thead>
@@ -156,8 +159,9 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </form>  
     </div>
+</div>
 
     
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
