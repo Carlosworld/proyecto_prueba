@@ -11,20 +11,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="tr_input">
                         <td><label style="clear: both;display: block;" for="rfc"><span>*</span>RFC</label>
-                        <input type="text" class="form-control form-control-sm" id="rfc" name="rfc">
+                        <input type="text" class="form-control form-control-sm username" id="username_1" name="rfc" onkeyup="this.value = this.value.toUpperCase();">
                         
                         </td>
 
-                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="campoExtendido form-control form-control-sm" id="razonSocial" name="razon-social">
+                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="name form-control form-control-sm" id="name_1" name="razon-social">
                         
                         </td>
 
                     </tr>
                     <tr>
                         <td><label style="clear: both;display: block;"><span>*</span>Email</label>
-                        <input type="email" class="form-control form-control-sm" id="email" name="email"></td>
+                        <input type="email" class="email form-control form-control-sm" id="email_1"></td>
 
 
 
@@ -61,12 +61,12 @@
                         <td><label style="clear: both;display: block;">Ciudad/Municipio/Delegación</label><select id="cbx_municipio" name="municipio"class="form-control form-control-sm"><option value="" selected="">--Seleccionar--</option></select></td>
 
 
-                        <td><label style="clear: both;display: block;">Dirección</label><textarea class="form-control form-control-sm" id="dir" name="dir"></textarea></td>
+                        <td><label style="clear: both;display: block;">Dirección</label><textarea class="dir form-control form-control-sm" id="dir_1" name="dir"></textarea></td>
 
 
-                        <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="form-control form-control-sm" id="col" name="colonia"></td>
+                        <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="col form-control form-control-sm" id="col_1" name="colonia"></td>
 
-                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="campoNumerico form-control form-control-sm" id="cp" name="codigo-postal"></td>
+                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="cp campoNumerico form-control form-control-sm" id="cp_1" name="codigo-postal"></td>
                     </tr>
                 </tbody>
             </table>
@@ -163,15 +163,6 @@
     </div>
 </div>
 
-    
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
-     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-  </script>  
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
-   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  -->
-  <script type="text/javascript" src="index.js"></script>
-  <!-- <script src="assets/js/jquery.min.js"></script> -->
-    <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
- <?php include('footer.php');?>  
+<script type="text/javascript" src="index.js"></script>
+<?php include('footer.php');?>  

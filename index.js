@@ -54,19 +54,15 @@ $(document).ready(function() {
             $('#numeroCuenta').prop('disabled', true);
         }
     });
-})
-
-// buscar rfcs
-
-
+});
 // Insertar  los campos a la base de datos
 
 $(document).ready(function() {   
-  $("#formID").submit(function(e){
+ $("#formID").submit(function(e){
         const dataForm ={
-          rfc:$("#rfc"). val(),
-          razon:$("#razonSocial"). val(),
-          email:$("#email"). val(),
+          rfc:$("#username_1"). val(),
+          razon:$("#name_1"). val(),
+          email:$("#email_1"). val(),
           //formaPago:$("#select"). val(),
           //numCuenta:$("#numeroCuenta"). val(),
           //CFDI:$("#cfdi"). val(),
@@ -75,9 +71,9 @@ $(document).ready(function() {
           // Datos opcionales
           estado:$("#cbx_estados"). val(),
           municipio:$("#cbx_municipio"). val(),
-          direccion:$("#dir"). val(),
-          colonia:$("#col"). val(),
-          codigoPostal:$("#cp"). val(),
+          direccion:$("#dir_1"). val(),
+          colonia:$("#col_1"). val(),
+          codigoPostal:$("#cp_1"). val(),
         }; 
 
    console.log(dataForm.rfc);
@@ -85,5 +81,71 @@ $(document).ready(function() {
            console.log(response)
      });
     e.preventDefault();
+  });
+});
+
+
+// Busqueda de rfc por 
+
+$(document).ready(function(){
+
+  $(document).on('keydown', '.username', function() {
+      
+      var id = this.id;
+      console.log(id);
+      var splitid = id.split('_');
+      var index = splitid[1];
+
+      $( '#'+id ).autocomplete({
+          source: function( request, response ) {
+              $.ajax({
+                  url: "rfc.php",
+                  type: 'post',
+                  dataType: "json",
+                  data: {
+                      search: request.term,request:1
+                  },
+                  success: function( data ) {
+                      response( data );
+                  }
+              });
+          },
+          select: function (event, ui) {
+              $(this).val(ui.item.label); // display the selected text
+              var userid = ui.item.value; // selected id to input
+
+              // AJAX
+              $.ajax({
+                  url: 'rfc.php',
+                  type: 'post',
+                  data: {userid:userid,request:2},
+                  dataType: 'json',
+                  success:function(response){
+                      
+                      var len = response.length;
+
+                      if(len > 0){
+                          var id = response[0]['id'];
+                          var name = response[0]['name'];
+                          var email = response[0]['email'];
+                          var dir = response[0]['dir'];
+                          var col = response[0]['col'];
+                          var cp = response[0]['cp'];
+
+                          document.getElementById('name_'+index).value = name;
+                          document.getElementById('email_'+index).value = email;
+                          document.getElementById('dir_'+index).value = dir;
+                          document.getElementById('col_'+index).value = col;
+                          document.getElementById('cp_'+index).value = cp;
+
+                          
+                      }
+                      
+                  }
+              });
+
+              return false;
+          }
+      });
   });
 });
