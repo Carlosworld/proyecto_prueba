@@ -11,7 +11,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="tr_input">
                         <td><label style="clear: both;display: block;" for="rfc"><span>*</span>RFC</label>
                         <input type="text" class="form-control form-control-sm username" id="username_1" name="rfc" onkeyup="this.value = this.value.toUpperCase();">
                         

@@ -150,6 +150,7 @@ $(document).ready(function(){
   });
 });
 
+
 // Busqueda de los productode de la tabla productos
 
 $(document).ready(function(){
@@ -230,6 +231,5 @@ $(document).ready(function(){
     
 });
 });
-
 
 
