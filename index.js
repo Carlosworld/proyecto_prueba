@@ -214,22 +214,30 @@ $(document).ready(function(){
 
     // Get last id 
     var lastname_id = $('.tr_input input[type=text]:nth-child(1)').last().attr('id');
-    console.log(lastname_id)
     var split_id = lastname_id.split('_');
 
     // New index
     var index = Number(split_id[1]) + 1;
 
-    // Create row with input elements
-    // var html = "<tr class='tr_input'><td><input type='text' class='username' id='username_"+index+"' placeholder='Enter username'></td><td><input type='text' class='name' id='name_"+index+"' ></td><td><input type='text' class='age' id='age_"+index+"' ></td><td><input type='text' class='email' id='email_"+index+"' ></td><td><input type='text' class='salary' id='salary_"+index+"' ></td><td><button class='btn btn-danger btn-sm' type='button'><i class='fa fa-trash-o'></i></button></td></tr>";
-
-    var html = "<tr class='tr_input'><td><input type='text' class='producto form-control form-control-sm' id='producto_"+index+"'></td><td><input type='text' class='nombre  form-control form-control-sm' id='nombre_"+index+"'></td><td><input type='text' class='cantidad campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='text' class='cantidad campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='text' class='cantidad campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='text' class='cantidad campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='text' class='costoUnitario campoNumerico form-control form-control-sm' id='costoUnitario_"+index+"'></td><td><button class='btn btn-danger btn-sm' type='button'><i class='fa fa-trash-o'></i></button></td></tr>";
+    var html = "<tr class='tr_input' taskId='"+index+"' ><td><input type='text' class='producto form-control form-control-sm' id='producto_"+index+"'></td><td><input type='text' class='nombre  form-control form-control-sm' id='nombre_"+index+"'></td><td><input type='text' class='cantidad campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='text' class='descuento campoNumerico form-control form-control-sm' id='descuento_"+index+"'></td><td><input type='text' class='iva campoNumerico form-control form-control-sm' id='iva_"+index+"'></td><td><input type='text' class='total campoNumerico form-control form-control-sm' id='total_"+index+"'></td><td><input type='text' class='costoUnitario campoNumerico form-control form-control-sm' id='costoUnitario_"+index+"'></td><td><button  class='task-delete btn btn-danger btn-sm' type='button' id='"+index+"'><i class='fa fa-trash-o'></i></button></td></tr>";
 
     // Append data
-    console.log(html)
     $('.tbody').append(html);
     
 });
 });
 
 
+// formulas para el apartado de producto
+
+$(document).ready(function(){
+  $(document).on('click','.task-delete', function() {
+    let element = $(this)[0].parentElement.parentElement;
+    //let id = $(element).attr('taskId')
+   
+    // $.post('delete_product.php',{id},response)
+       event.preventDefault();
+    $(this).closest(element).remove();
+   
+})
+});

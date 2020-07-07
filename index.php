@@ -106,9 +106,11 @@
                     </tr>
                 </tbody>
             </table>
-            <br>
-        <input type='button' value='Add more' id='addmore'>
-
+        <!-- <input class="btn btn-" type='button' value='Add more' id='addmore'> -->
+        <div class="col p-4">
+            <button type="button" class="btn btn-secondary btn-sm" id='addmore'>Agrear producto</button>
+        </div>
+        
         </div>
 </div>
         <div style="text-align: center;"><button class="btn btn-info" id="botonAgregarConcepto" type="submit" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>

@@ -42,3 +42,4 @@ if($request == 2){
     echo json_encode($users_arr);
     exit;
 }
+?>
