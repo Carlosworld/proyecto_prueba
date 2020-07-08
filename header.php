@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     
-    <link href='jquery-ui.min.css' type='text/css' rel='stylesheet' >
-    <script src="jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="jquery-ui.min.js" type="text/javascript"></script> 
+    <link href=' assets/js/jquery-ui.min.css' type='text/css' rel='stylesheet' >
+    <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-ui.min.js" type="text/javascript"></script> 
 
 
   

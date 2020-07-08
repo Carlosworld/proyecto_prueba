@@ -93,16 +93,18 @@
 
 
                         <td><input type="text" class="nombre form-control form-control-sm" id="nombre_1"></td>
-
-                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        
+                        <td><input type="number" class="multi cantidad campoNumerico form-control form-control-sm" id="cantidad"></td>
 
                          <!-- <td><input type="text" class="costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>  -->
 
-                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
-                         <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
-                        <td><input type="text" class="campoNumerico form-control form-control-sm"></td>
+                        <td><input type="number" class="numero amt campoNumerico form-control form-control-sm" id="descuento_1" ></td>
+                         
+                        <td><input type="number" class="numero campoNumerico form-control form-control-sm"></td>                   
+
+                        <td><input type="number" class="total campoNumerico form-control form-control-sm" id="result"></td>
                         <!-- <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td> -->
-                        <td><input type="text" class="costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>
+                        <td><input type="number" class="multi precio costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>
                     </tr>
                 </tbody>
             </table>

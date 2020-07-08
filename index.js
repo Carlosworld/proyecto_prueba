@@ -199,7 +199,7 @@ $(document).ready(function(){
                   
                       document.getElementById('nombre_'+index).value = nombre;
                       document.getElementById('costoUnitario_'+index).value = costoUnitario;
-
+                      
                   }
                   
               }
@@ -228,7 +228,7 @@ $(document).ready(function(){
 });
 
 
-// formulas para el apartado de producto
+// Borrador de filas
 
 $(document).ready(function(){
   $(document).on('click','.task-delete', function() {
@@ -240,4 +240,48 @@ $(document).ready(function(){
     $(this).closest(element).remove();
    
 })
-});
+})
+
+// formulas
+
+// function calcular_total() {
+
+//   var importe_total = 0
+//   $('.amt').keyup(function (){
+//       $(".amt").each(
+//           function(index, value) {
+//               importe_total = importe_total + eval($(this).val());
+//               console.log(importe_total);
+//           }
+//       );  
+//   });
+//   $("#inputTotal").val(importe_total);
+// } 
+$(document).ready(function(){
+  $(document).on('keyup','.multi', function() {
+
+//$('.multi').keyup(function() {
+  var id = this.id;
+  console.log(id)
+
+  var precio = [];
+  var cantidad = [];
+ 
+
+  $('.precio').each(function(i, obj) {
+    precio.push(+obj.value);
+  });
+  $('.cantidad').each(function(i, obj) {
+    cantidad.push(+obj.value);
+  });
+
+  var resultado = 0;
+
+  precio.map((o, i) => {
+    resultado += o * cantidad[i];
+  });
+
+  $("#result").val(resultado);
+
+})
+})
