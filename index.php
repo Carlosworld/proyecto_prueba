@@ -34,18 +34,18 @@
 
 
 
-                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select" name="forma-pago"><option value="1" selected="" id="1">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select" name="forma-pago" required><option value="1" selected="" id="1">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
 
 
-                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm" id="numeroCuenta" name="numero-cuenta" disabled></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm" id="numeroCuenta" name="numero-cuenta" onkeypress="solonumeros(event);" disabled></td>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm" id="cfdi" name="CFDI"><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm" id="cfdi" name="CFDI" required><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
 
 
                         <td><label style="clear: both;display: block;"><span>*</span>Método de Pago</label>
-                        <select class="form-control form-control-sm" id="metodoPago" name="metodo-pago"><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
+                        <select class="form-control form-control-sm" id="metodoPago" name="metodo-pago" required><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
                         <td
                             colspan="3"></td>
                     </tr>
@@ -66,7 +66,7 @@
 
                         <td><label style="clear: both;display: block;">Colonia</label><input type="text" class="col form-control form-control-sm" id="col_1" name="colonia"></td>
 
-                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="cp campoNumerico form-control form-control-sm" id="cp_1" name="codigo-postal"></td>
+                        <td><label style="clear: both;display: block;">Código Postal</label><input type="text" class="cp campoNumerico form-control form-control-sm" id="cp_1" name="codigo-postal" onkeypress="solonumeros(event);"></td>
                     </tr>
                 </tbody>
             </table>
@@ -87,24 +87,25 @@
                     </tr>
                 </thead>
                 <tbody class="tbody">
-                    <tr class="tr_input">
+                    <tr class="filas tr_input " taskId='1'>
                         
                         <td><input type="text" class="producto form-control form-control-sm" id="producto_1"></td>
 
 
                         <td><input type="text" class="nombre form-control form-control-sm" id="nombre_1"></td>
-                        
-                        <td><input type="number" class="multi cantidad campoNumerico form-control form-control-sm" id="cantidad"></td>
+
+                        <td><input type="text" class="monto cantidad_1 campoNumerico form-control form-control-sm" id="cantidad_1"  onkeypress="solonumeros(event);"></td>
 
                          <!-- <td><input type="text" class="costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>  -->
 
-                        <td><input type="number" class="numero amt campoNumerico form-control form-control-sm" id="descuento_1" ></td>
+                        <td><input type="text" class="monto2 descuento_1 campoNumerico form-control form-control-sm"  placeholder="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%"onkeypress="solonumeros(event);"></td>
                          
-                        <td><input type="number" class="numero campoNumerico form-control form-control-sm"></td>                   
-
-                        <td><input type="number" class="total campoNumerico form-control form-control-sm" id="result"></td>
+                         <td><input type="text" class="monto3 iva_1 campoNumerico form-control form-control-sm"  value="0.16" id="iva_1" onkeypress="solonumeros(event);" disabled></td>
+                        
+                        <td><input type="text" class="total_1 campoNumerico form-control form-control-sm" id="total_1" onkeypress="solonumeros(event);" disabled></td>
+                        
                         <!-- <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td> -->
-                        <td><input type="number" class="multi precio costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>
+                        <td><input type="text" class="monto costoUnitario_1 costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1" onkeypress="solonumeros(event);"></td>
                     </tr>
                 </tbody>
             </table>
