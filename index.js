@@ -219,10 +219,13 @@ $(document).ready(function(){
     // New index
     var index = Number(split_id[1]) + 1;
 
-    var html = "<tr class='tr_input' taskId='"+index+"' ><td><input type='text' class='producto form-control form-control-sm' id='producto_"+index+"'></td><td><input type='text' class='nombre  form-control form-control-sm' id='nombre_"+index+"'></td><td><input type='text' class='cantidad campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='text' class='descuento campoNumerico form-control form-control-sm' id='descuento_"+index+"'></td><td><input type='text' class='iva campoNumerico form-control form-control-sm' id='iva_"+index+"'></td><td><input type='text' class='total campoNumerico form-control form-control-sm' id='total_"+index+"'></td><td><input type='text' class='costoUnitario campoNumerico form-control form-control-sm' id='costoUnitario_"+index+"'></td><td><button  class='task-delete btn btn-danger btn-sm' type='button' id='"+index+"'><i class='fa fa-trash-o'></i></button></td></tr>";
+    var html = "<tr class='filas tr_input' taskId='"+index+"' ><td><input type='text' class='producto form-control form-control-sm' id='producto_"+index+"'></td><td><input type='text' class='nombre  form-control form-control-sm' id='nombre_"+index+"'></td><td><input type='text' class='monto  cantidad_"+index+" campoNumerico form-control form-control-sm' id='cantidad_"+index+"' onChange='suma();'></td><td><input type='number' class='monto1 descuento_"+index+" campoNumerico form-control form-control-sm' id='descuento_"+index+"'></td><td><input type='text' class='monto2 iva_"+index+" campoNumerico form-control form-control-sm' id='iva_"+index+"' value='0.16'disabled></td><td><input type='text' class='total campoNumerico form-control form-control-sm' id='total_"+index+"'></td><td><input type='text' class='monto costoUnitario_"+index+" campoNumerico form-control form-control-sm' id='costoUnitario_"+index+"' onChange='suma();'></td><td><button  class='task-delete btn btn-danger btn-sm' type='button' id='"+index+"'><i class='fa fa-trash-o'></i></button></td></tr>";
 
     // Append data
     $('.tbody').append(html);
+    
+
+   
     
 });
 });
@@ -234,7 +237,7 @@ $(document).ready(function(){
   $(document).on('click','.task-delete', function() {
     let element = $(this)[0].parentElement.parentElement;
     //let id = $(element).attr('taskId')
-   
+
     // $.post('delete_product.php',{id},response)
        event.preventDefault();
     $(this).closest(element).remove();
@@ -242,46 +245,73 @@ $(document).ready(function(){
 })
 })
 
-// formulas
 
-// function calcular_total() {
 
-//   var importe_total = 0
-//   $('.amt').keyup(function (){
-//       $(".amt").each(
-//           function(index, value) {
-//               importe_total = importe_total + eval($(this).val());
-//               console.log(importe_total);
-//           }
-//       );  
-//   });
-//   $("#inputTotal").val(importe_total);
-// } 
-$(document).ready(function(){
-  $(document).on('keyup','.multi', function() {
+function suma() {
+  var desc = 0;
+  var mult= 1;
+  var iva =0;
+  $('.monto').each(function() {
+    var id_cantidad = $(this).val();
+    console.log(id_cantidad);
+      if (!isNaN($(this).val())) {
+        mult += mult * Number($(this).val())-1;
+      }
+  });
+  $('.monto2').each(function() {
+    var id_descuento = $(this).val();
+    console.log(id_descuento);
+    if (!isNaN($(this).val())) {
+        desc += Number($(this).val());
+      descuento= desc/100;
+      //console.log(descuento);
+    }
+});
+$('.monto3').each(function() {
+  var id_iva = $(this).val();
+  console.log(id_iva);
+  if (!isNaN($(this).val())) {
+      iva += Number($(this).val());
+      //console.log(iva)
+  }
+});
+result=mult
+total_desc= result*descuento;
 
-//$('.multi').keyup(function() {
-  var id = this.id;
-  console.log(id)
+// console.log(total_desc)
 
-  var precio = [];
-  var cantidad = [];
+
+
+total=result-total_desc
+iva_result = iva * total
+// console.log(iva_result)
+
+$('.filas').each(function() {
+  let id = $(this).attr('taskId')
+  console.log('-->',id);
  
+  let ivaElement = $(this).find('.iva_'+id)
+  let ivaVal = ivaElement.val()
+  
+  //var iva = $('.iva_'+id).val();
+  
+ //var iva = $(`.iva_${id}`).val();
+ console.log(ivaElement);
+  console.log('==>',ivaVal);
+  
+  
+});
 
-  $('.precio').each(function(i, obj) {
-    precio.push(+obj.value);
-  });
-  $('.cantidad').each(function(i, obj) {
-    cantidad.push(+obj.value);
-  });
+// var splitid = id_producto.split('_');
+// //var index = splitid[1];
 
-  var resultado = 0;
+// $('.total').each(function() {
+//   var id_producto = this.id;
+//   console.log(id_producto);
+  
+ 
+//  $('#'+id_producto ).val(total+iva_result);
+//   });
 
-  precio.map((o, i) => {
-    resultado += o * cantidad[i];
-  });
 
-  $("#result").val(resultado);
-
-})
-})
+};
