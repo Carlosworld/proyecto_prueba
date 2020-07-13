@@ -89,9 +89,8 @@
                 <tbody class="tbody">
                     <tr class="filas tr_input " taskId='1'>
                         
-                        <td><input type="text" class="producto form-control form-control-sm" id="producto_1"></td>
-
-
+                        <td><input type="text" class="fas fa-search producto form-control form-control-sm" id="producto_1" placeholder='buscar'></td>
+                        
                         <td><input type="text" class="nombre form-control form-control-sm" id="nombre_1"></td>
 
                         <td><input type="text" class="monto cantidad_1 campoNumerico form-control form-control-sm" id="cantidad_1"  onkeypress="solonumeros(event);"></td>
@@ -116,7 +115,7 @@
         
         </div>
 </div>
-        <div style="text-align: center;"><button class="btn btn-info" id="botonAgregarConcepto" type="submit" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
+        <div style="text-align: center;"class="p-4"><button class="btn btn-info" id="botonAgregarConcepto" type="submit" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
         <div class="table-responsive" style="width: 300px;float: right;">
             <table class="table">
                 <thead>
