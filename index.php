@@ -125,23 +125,23 @@
                 <tbody>
                     <tr>
                         <td>Importe</td>
-                        <td>$0.00</td>
+                        <td><p></p></td>
                     </tr>
                     <tr>
                         <td>Descuento</td>
-                        <td>$0.00</td>
+                        <td><p1></p1></td>
                     </tr>
                     <tr>
                         <td>Subtotal</td>
-                        <td>$0.00</td>
+                        <td><p2></p2></td>
                     </tr>
                     <tr>
                         <td>IVA</td>
-                        <td>$0.00</td>
+                        <td><p3></p3></td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td>$0.00</td>
+                        <td><p4></p4></td>
                     </tr>
                 </tbody>
             </table>
