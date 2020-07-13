@@ -219,7 +219,7 @@ $(document).ready(function(){
     // New index
     var index = Number(split_id[1]) + 1;
 
-    var html = "<tr class='filas tr_input fila_t' taskId='"+index+"' ><td><input type='text' class='producto form-control form-control-sm' id='producto_"+index+"'></td><td><input type='text' class='nombre  form-control form-control-sm' id='nombre_"+index+"'></td><td><input type='text' class='monto  cantidad_"+index+" campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='number' class='monto1 descuento_"+index+" campoNumerico form-control form-control-sm' id='descuento_"+index+"'></td><td><input type='text' class='monto2 iva_"+index+" campoNumerico form-control form-control-sm' id='iva_"+index+"' value='0.16'disabled></td><td><input type='text' class='monto4 total_"+index+" campoNumerico form-control form-control-sm' id='total_"+index+"' disabled></td><td><input type='text' class='monto costoUnitario_"+index+" campoNumerico form-control form-control-sm' id='costoUnitario_"+index+"'></td><td><button  class='task-delete btn btn-danger btn-sm' type='button' id='"+index+"'><i class='fa fa-trash-o'></i></button></td></tr>";
+    var html = "<tr class='filas tr_input fila_t' taskId='"+index+"' ><td><input type='text' class='producto form-control form-control-sm' id='producto_"+index+"'></td><td><input type='text' class='nombre  form-control form-control-sm' id='nombre_"+index+"'></td><td><input type='text' class='monto  cantidad_"+index+" campoNumerico form-control form-control-sm' id='cantidad_"+index+"'></td><td><input type='number' class='monto1 descuento_"+index+" campoNumerico form-control form-control-sm' id='descuento_"+index+"' disabled></td><td><input type='text' class='monto2 iva_"+index+" campoNumerico form-control form-control-sm' id='iva_"+index+"' value='0.16'disabled></td><td><input type='text' class='monto4 total_"+index+" campoNumerico form-control form-control-sm' id='total_"+index+"' disabled></td><td><input type='text' class='monto costoUnitario_"+index+" campoNumerico form-control form-control-sm' id='costoUnitario_"+index+"'></td><td><button  class='task-delete btn btn-danger btn-sm' type='button' id='"+index+"'><i class='fa fa-trash-o'></i></button></td></tr>";
 
     // Append data
     $('.tbody').append(html);
@@ -274,43 +274,45 @@ function solonumeros(e)
                   
 // Formulas del producto
 
-$(document).ready(function(){
-  $(document).on('change','.filas', function() {
+// $(document).ready(function(){
+//   $(document).on('change','.filas', function() {
    
     
-    let id = $(this).attr('taskId')
-    // console.log('-->',id);
+//     let id = $(this).attr('taskId')
+//     // console.log('-->',id);
    
-    let ivaElement = $(this).find('.iva_'+id)
-    let ivaVal = ivaElement.val()
+//     let ivaElement = $(this).find('.iva_'+id)
+//     let ivaVal = ivaElement.val()
     
-    let cantiElement = $(this).find('.cantidad_'+id)
-    let cantiVal = cantiElement.val()
+//     let cantiElement = $(this).find('.cantidad_'+id)
+//     let cantiVal = cantiElement.val()
     
-    let descElement = $(this).find('.descuento_'+id)
-    let descVal = descElement.val()
+//     let descElement = $('.descuentoGeneral')
+//     let descVal = descElement.val()
+ 
+//     console.log('valor del decuento',descVal);
+    
 
-    let costoUniElement = $(this).find('.costoUnitario_'+id)
-    let costoUniVal = costoUniElement.val()
+//     let costoUniElement = $(this).find('.costoUnitario_'+id)
+//     let costoUniVal = costoUniElement.val()
     
-    //cantidades
-    let totalCantidad = cantiVal * costoUniVal;
+//     //cantidades
+//     let totalCantidad = cantiVal * costoUniVal;
     
-    // descuento
-    let n_descVal = descVal/100;
-    let totalDes = n_descVal * totalCantidad
+//     // descuento
     
-    // total
-    let total = totalCantidad - totalDes
+//     // total
+//     let total = totalCantidad;
     
-    // iva
-    let iva_result = ivaVal * total
-    let total1 =total + iva_result
-    //total mas iva
-    $('.total_'+id).val(total1.toFixed(2))
+//     // iva
+//     let iva_result = ivaVal * total
+//     let total1 =total + iva_result
+//    totalDescuetoGeneral = total1 - descVal
+//     //total mas iva
+//     $('.total_'+id).val(totalDescuetoGeneral.toFixed(2))
 
-})
-})
+// })
+// })
 
 
 // Importe
@@ -323,11 +325,11 @@ $(document).ready(function(){
 
 
     var preciosTotal = [];
-    var descuentosTotal = [];
+    // var descuentosTotal = [];
     //var ivaResult =[];
 
     var total = 0;
-    var totalDescuento = 0;
+    // var totalDescuento = 0;
     //var iva = 0;
 
     $(".filas").each(function(index) {
@@ -350,14 +352,15 @@ $(document).ready(function(){
          let ivaVal = ivaTotal;
 
         // calculo de el decuento
-        let totalCantidad = cantiVal * costoUniVal;
-        let decuentoVal = descuento/100;
-        let totalDes = decuentoVal * totalCantidad
+       
+        
+        // let decuentoVal = descuento;
+        // let totalDes = decuentoVal 
 
-        var total_descuento = totalDes;
-        descuentosTotal.push(total_descuento);
-        $(this).find('.descuentoTotal').text(total_descuento+' $');
-        totalDescuento += total_descuento;
+        // var total_descuento = totalDes;
+        // descuentosTotal.push(total_descuento);
+        // $(this).find('.descuentoTotal').text(total_descuento+' $');
+        // totalDescuento += total_descuento;
 
         var total_unitario = cantidad * precio;
         preciosTotal.push(total_unitario);
@@ -366,7 +369,7 @@ $(document).ready(function(){
 
         // Calculo del subtotal
 
-        Subtotal = total - totalDescuento;
+        Subtotal = total ;
         
         // Calculo del iva
         
@@ -388,8 +391,8 @@ $(document).ready(function(){
     console.log(total);
     $("p").text(''+total.toFixed(2)+' $');
 
-    console.log(totalDescuento.toFixed(2));
-    $("p1").text(''+totalDescuento.toFixed(2)+' $');
+    // console.log(totalDescuento.toFixed(2));
+    // $("p1").text(''+totalDescuento.toFixed(2)+' $');
 
     console.log(Subtotal.toFixed(2));
     $("p2").text(''+Subtotal.toFixed(2)+' $');
@@ -408,3 +411,74 @@ $(".table").on('change', function() {
 });
 })
 
+// Descuento General
+$(document).ready(function(){
+  function actualizarTabla() {
+ 
+    var descuentosTotal = [];
+
+    var totalDescuento = 0;
+
+
+    $(".filas").each(function(index) {
+        let id = $(this).attr('taskId')
+        console.log(id);
+        let costoUniElement = $(this).find('.costoUnitario_'+id)
+        let costoUniVal = costoUniElement.val()
+
+        let cantiElement = $(this).find('.cantidad_'+id)
+        let cantiVal = cantiElement.val()
+
+        // var descuento = Number($(this).find('.descuento_'+id).val());
+        // descuentos.push(descuento);
+
+        let descElement = $('.descuentoGeneral').val()
+        let descVal = descElement
+        console.log(descVal);
+
+        // var descuento = Number($(this).find('.descuento_'+id).val());
+        //  descuentos.push(descuento);
+        
+        // calculo de el decuento
+        let totalCantidad = cantiVal * costoUniVal;
+        let decuentoVal = descVal/100;
+        let totalDes = decuentoVal * totalCantidad
+        console.log(totalDes);
+        
+        let total = totalCantidad - totalDes
+        // Calculo del subtotal
+        $('.total_'+id).val(total.toFixed(2))
+
+        
+        $('.descuento_'+id).val(totalDes.toFixed(2))
+        // var total_iva = iva_valor;
+        // ivaResult.push(total_iva);
+        // $(this).find('.ivaTotal').text(total_iva+' $');
+        // iva += total_iva;
+        
+
+        var total_descuento = totalDes;
+        descuentosTotal.push(total_descuento);
+        $(this).find('.descuentoTotal').text(total_descuento+' $');
+        totalDescuento += total_descuento;
+
+        console.log(totalDescuento.toFixed(2));
+    $("p1").text(''+totalDescuento.toFixed(2)+' $');
+
+
+    });
+    
+  
+    
+
+    // console.log(totalDescuento.toFixed(2));
+    // $("p1").text(''+totalDescuento.toFixed(2)+' $');
+
+}
+
+actualizarTabla();
+
+$(".table").on('change', function() {
+    actualizarTabla();
+});
+})
