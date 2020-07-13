@@ -108,7 +108,12 @@
                         <td><input type="text" class="monto costoUnitario_1 costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1" onkeypress="solonumeros(event);"></td>
                     </tr>
                 </tbody>
+
+            <tr>
+                    <td><input type="text" class="descuentoGeneral  form-control        form-control-sm" id="descuentoGeneral" placeholder="descuento   %"   onkeypress="solonumeros(event);"></td>
+                </tr>
             </table>
+
         <!-- <input class="btn btn-" type='button' value='Add more' id='addmore'> -->
         <div class="col p-4">
             <button type="button" class="btn btn-secondary btn-sm" id='addmore'>Agrear producto</button>
