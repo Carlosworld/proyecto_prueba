@@ -274,47 +274,6 @@ function solonumeros(e)
                   
 // Formulas del producto
 
-// $(document).ready(function(){
-//   $(document).on('change','.filas', function() {
-   
-    
-//     let id = $(this).attr('taskId')
-//     // console.log('-->',id);
-   
-//     let ivaElement = $(this).find('.iva_'+id)
-//     let ivaVal = ivaElement.val()
-    
-//     let cantiElement = $(this).find('.cantidad_'+id)
-//     let cantiVal = cantiElement.val()
-    
-//     let descElement = $('.descuentoGeneral')
-//     let descVal = descElement.val()
- 
-//     console.log('valor del decuento',descVal);
-    
-
-//     let costoUniElement = $(this).find('.costoUnitario_'+id)
-//     let costoUniVal = costoUniElement.val()
-    
-//     //cantidades
-//     let totalCantidad = cantiVal * costoUniVal;
-    
-//     // descuento
-    
-//     // total
-//     let total = totalCantidad;
-    
-//     // iva
-//     let iva_result = ivaVal * total
-//     let total1 =total + iva_result
-//    totalDescuetoGeneral = total1 - descVal
-//     //total mas iva
-//     $('.total_'+id).val(totalDescuetoGeneral.toFixed(2))
-
-// })
-// })
-
-
 // Importe
 $(document).ready(function(){
   function actualizarTabla() {
@@ -351,17 +310,6 @@ $(document).ready(function(){
          //ivas.push(ivaTotal);
          let ivaVal = ivaTotal;
 
-        // calculo de el decuento
-       
-        
-        // let decuentoVal = descuento;
-        // let totalDes = decuentoVal 
-
-        // var total_descuento = totalDes;
-        // descuentosTotal.push(total_descuento);
-        // $(this).find('.descuentoTotal').text(total_descuento+' $');
-        // totalDescuento += total_descuento;
-
         var total_unitario = cantidad * precio;
         preciosTotal.push(total_unitario);
         $(this).find('.precioTotal').text(total_unitario+' $');
@@ -378,12 +326,7 @@ $(document).ready(function(){
         // Calculo del total
 
         total_todo = Subtotal + iva;
-        
-
-        // var total_iva = iva_valor;
-        // ivaResult.push(total_iva);
-        // $(this).find('.ivaTotal').text(total_iva+' $');
-        // iva += total_iva;
+   
 
     });
     
@@ -440,22 +383,7 @@ $(document).ready(function(){
         console.log(descVal);
 
         let ivaElement = $(this).find('.iva_'+id)
-        let ivaVal = ivaElement.val()
-
-        // var descuento = Number($(this).find('.descuento_'+id).val());
-        //  descuentos.push(descuento);
-        
-        // // calculo de el decuento
-        //  let totalCantidad = cantiVal * costoUniVal;
-        // // let decuentoVal = descVal/descunicoVal;
-        // //let totalDes = decuentoVal * totalCantidad
-        // // console.log(decuentoVal);
-        
-        // let total = totalCantidad -totalUnicodescuento
-        // // Calculo del subtotal
-        // $('.total_'+id).val(total.toFixed(2))
-
-        
+        let ivaVal = ivaElement.val()    
       
         
         var total_descuento = descunicoVal;
