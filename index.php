@@ -1,5 +1,5 @@
 <?php include("db.php");?>
-<?php include('header.php');?>  
+<?php include('includes/header.php');?>  
 
 <div class="container p-4">
     <div class="table-responsive table-bordered">
@@ -100,16 +100,16 @@
 
                         <td><input type="text" class="monto2 descuento_1 campoNumerico form-control form-control-sm"  placeholder="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%"onkeypress="solonumeros(event);"></td>
                          
-                         <td><input type="text" class="monto3 iva_1 campoNumerico form-control form-control-sm"  value="0.16" id="iva_1" onkeypress="solonumeros(event);" disabled></td>
+                         <td><input type="text" class="monto3 iva_1 campoNumerico form-control form-control-sm"  value="0.16" id="iva_1"  onkeypress="solonumeros(event);" disabled></td>
                         
-                        <td><input type="text" class="total_1 campoNumerico form-control form-control-sm" id="total_1" onkeypress="solonumeros(event);" disabled></td>
+                        <td><input type="text"  class="monto4 total_1 campoNumerico form-control form-control-sm" id="total_1" onkeypress="solonumeros(event);" disabled></td>
                         
                         <!-- <td><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-trash-o"></i></button></td> -->
                         <td><input type="text" class="monto costoUnitario_1 costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1" onkeypress="solonumeros(event);"></td>
                     </tr>
                 </tbody>
                 <tr>
-                    <td><input type="text" class="descuentoGeneral  form-control        form-control-sm" id="descuentoGeneral" placeholder="descuento   $"   onkeypress="solonumeros(event);"></td>
+                    <td><input type="text" class="descuentoGeneral  form-control        form-control-sm"  id="descuentoGeneral" placeholder="descuento   $"   onkeypress="solonumeros(event);"></td>
                 </tr>
             </table>
         <!-- <input class="btn btn-" type='button' value='Add more' id='addmore'> -->
@@ -154,4 +154,4 @@
 
 
 <script type="text/javascript" src="index.js"></script>
-<?php include('footer.php');?>  
+<?php include('includes/footer.php');?>  
