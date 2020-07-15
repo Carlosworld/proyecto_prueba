@@ -298,23 +298,6 @@ $(document).ready(function(e){
 
 
 
-// validaciones
-$(document).ready(function () {
-  $(".formID").submit(function () {
-    var select = $("#select option:selected").val();
-    console.log(select)
-    if (select == null) {
-        $('.error').text("Seleccione una Casa de Apuestas");
-        return false;
-    } else {
-        $('.errors').hide();
-        alert('OK');
-        return true;
-    }
-    });
-
-})
-
 //solo numeros
 function solonumeros(e)
                     {
