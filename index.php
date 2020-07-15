@@ -1,11 +1,6 @@
 <?php include("db.php");?>
 <?php include('header.php');?>  
-<style>
-    .error{
-        color: red;
-        padding-left: 12px
-    }
-</style>
+
 
 <div class="container p-4">
     <div class="table-responsive table-bordered">
@@ -78,7 +73,7 @@
          
     </div>
     <div class="table-responsive table-bordered table-striped" id="tablaConceptos">
-            <table class="table">
+            <table class="table estiloLibre">
                 <thead>
                     <tr>
                         <th>Clave</th>
@@ -91,7 +86,7 @@
                         <th>Eliminar</th>
                     </tr>
                 </thead>
-                <tbody class="tbody">
+                <tbody class="tbody ">
                     <tr class="filas tr_input " taskId='1'>
                         
                         <td><input type="text" class="fas fa-search producto form-control form-control-sm" id="producto_1" placeholder='buscar'></td>
@@ -126,7 +121,7 @@
                 <thead>
                     <tr></tr>
                 </thead>
-                <tbody>
+                <tbody  class="td_style">
                     <tr>
                         <td>Importe</td>
                         <td><p></p></td>
