@@ -28,13 +28,6 @@ $(document).ready(function(){
       })
     })
   
-    // $('#enviar').on('click', function(){
-    //   var resultado = 'Lista de reproducción: ' + $('#lista_reproduccion option:selected').text() +
-    //   ' Video elegido: ' + $('#videos option:selected').text()
-  
-    //   $('#resultado1').html(resultado)
-    // })
-  
   })
 
 //BLOQUEO Y DESBLOQUEO DE ESTADO DE CUENTA
@@ -247,22 +240,6 @@ $(document).ready(function(e){
 
 
 
-// validaciones
-$(document).ready(function () {
-  $(".formID").submit(function () {
-    var select = $("#select option:selected").val();
-    console.log(select)
-    if (select == null) {
-        $('.error').text("Seleccione una Casa de Apuestas");
-        return false;
-    } else {
-        $('.errors').hide();
-        alert('OK');
-        return true;
-    }
-    });
-
-})
 
 //solo numeros
 function solonumeros(e)
@@ -280,15 +257,15 @@ $(document).ready(function(){
     var cantidades = [];
     var precios = [];
     var descuentos = [];
-    var ivas = [];
+    //var ivas = [];
 
 
     var preciosTotal = [];
-    // var descuentosTotal = [];
+    var descuentosTotal = [];
     //var ivaResult =[];
 
     var total = 0;
-    // var totalDescuento = 0;
+    var totalDescuento = 0;
     //var iva = 0;
 
     $(".filas").each(function(index) {
@@ -305,10 +282,21 @@ $(document).ready(function(){
 
          var descuento = Number($(this).find('.descuento_'+id).val());
          descuentos.push(descuento);
+         
 
          var ivaTotal = Number($(this).find('.iva_'+id).val());
          //ivas.push(ivaTotal);
          let ivaVal = ivaTotal;
+
+        // calculo de el decuento
+        let totalCantidad = cantiVal * costoUniVal;
+        let decuentoVal = descuento/100;
+        let totalDes = decuentoVal * totalCantidad
+
+        var total_descuento = totalDes;
+        descuentosTotal.push(total_descuento);
+        $(this).find('.descuentoTotal').text(total_descuento+' $');
+        totalDescuento += total_descuento;
 
         var total_unitario = cantidad * precio;
         preciosTotal.push(total_unitario);
@@ -317,7 +305,7 @@ $(document).ready(function(){
 
         // Calculo del subtotal
 
-        Subtotal = total ;
+        Subtotal = total - totalDescuento;
         
         // Calculo del iva
         
@@ -326,7 +314,8 @@ $(document).ready(function(){
         // Calculo del total
 
         total_todo = Subtotal + iva;
-   
+        
+
 
     });
     
@@ -334,8 +323,8 @@ $(document).ready(function(){
     console.log(total);
     $("p").text(''+total.toFixed(2)+' $');
 
-    //console.log(totalDescuento.toFixed(2));
-    // $("p1").text(''+totalDescuento.toFixed(2)+' $');
+    console.log(totalDescuento.toFixed(2));
+    $("p1").text(''+totalDescuento.toFixed(2)+' $');
 
     console.log(Subtotal.toFixed(2));
     $("p2").text(''+Subtotal.toFixed(2)+' $');
@@ -354,23 +343,21 @@ $(".table").on('change', function() {
 });
 })
 
+
 // Descuento General
 $(document).ready(function(){
   function actualizarTabla2() {
  
-    var descuentosTotal = [];
 
-    var totalDescuento = 0;
+    var descuento = $('.filas').length
 
-    var asu = $('.filas').length
-
-    // console.log('noooooooweeeeee',asu);
+    
    var decuentoss = $('.descuentoGeneral').val()
-    // console.log('decuentossssss',decuentoss);
+    
     
 
-    descuentoporfila = decuentoss / asu
-    // console.log('estamadre=>',descuentoporfila);
+    descuentoporfila = decuentoss / descuento
+    
     
     $(".filas").each(function(index) {
         let id = $(this).attr('taskId')
@@ -381,25 +368,20 @@ $(document).ready(function(){
         let cantiElement = $(this).find('.cantidad_'+id)
         let cantiVal = cantiElement.val()
 
-        // var descuento = Number($(this).find('.descuento_'+id).val());
-        // descuentos.push(descuento);
+  
  
         let ivaElement = $(this).find('.iva_'+id)
         let ivaVal = ivaElement.val()    
       
  
         
-        // totalUnicodescuento = descVal / descunicoVal
-        // $('.descuento_1').val(totalUnicodescuento.toFixed(2))
         
         $('.descuento_'+id).val(descuentoporfila)
-    //     console.log(totalDescuento.toFixed(2));
-    // $("p1").text(''+totalDescuento.toFixed(2)+' $');
+   
+        $("p1").text(''+decuentoss,'$');
 
     let totalCantidad = cantiVal * costoUniVal;
-    // let decuentoVal = descVal/descunicoVal;
-    //let totalDes = decuentoVal * totalCantidad
-    // console.log(decuentoVal);
+
     
     iva = ivaVal * totalCantidad
     
@@ -412,13 +394,6 @@ $(document).ready(function(){
 
 
     });
-    
- 
-  // var unicototaldescuento = totalDescuento * totalUnicodescuento
-
-    //  console.log(unicototaldescuento.toFixed(2));
-    //  $("p1").text(''+unicototaldescuento.toFixed(2)+' $');
-
 }
 
 actualizarTabla2();
