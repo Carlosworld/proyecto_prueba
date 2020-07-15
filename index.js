@@ -334,7 +334,7 @@ $(document).ready(function(){
     console.log(total);
     $("p").text(''+total.toFixed(2)+' $');
 
-    // console.log(totalDescuento.toFixed(2));
+    //console.log(totalDescuento.toFixed(2));
     // $("p1").text(''+totalDescuento.toFixed(2)+' $');
 
     console.log(Subtotal.toFixed(2));
@@ -364,13 +364,13 @@ $(document).ready(function(){
 
     var asu = $('.filas').length
 
-    console.log('noooooooweeeeee',asu);
+    // console.log('noooooooweeeeee',asu);
    var decuentoss = $('.descuentoGeneral').val()
-    console.log('decuentossssss',decuentoss);
+    // console.log('decuentossssss',decuentoss);
     
 
     descuentoporfila = decuentoss / asu
-    console.log('estamadre=>',descuentoporfila);
+    // console.log('estamadre=>',descuentoporfila);
     
     $(".filas").each(function(index) {
         let id = $(this).attr('taskId')

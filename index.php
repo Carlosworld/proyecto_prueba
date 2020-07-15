@@ -98,7 +98,7 @@
 
                          <!-- <td><input type="text" class="costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>  -->
 
-                        <td><input type="text" class="monto2 descuento_1 campoNumerico form-control form-control-sm"  placeholder="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%"onkeypress="solonumeros(event);"></td>
+                        <td><input type="text" class="monto2 descuento_1 campoNumerico form-control form-control-sm"  placeholder="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp%"onkeypress="solonumeros(event);"disabled></td>
                          
                          <td><input type="text" class="monto3 iva_1 campoNumerico form-control form-control-sm"  value="0.16" id="iva_1"  onkeypress="solonumeros(event);" disabled></td>
                         
