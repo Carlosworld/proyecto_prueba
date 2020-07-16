@@ -28,13 +28,6 @@ $(document).ready(function(){
       })
     })
   
-    // $('#enviar').on('click', function(){
-    //   var resultado = 'Lista de reproducción: ' + $('#lista_reproduccion option:selected').text() +
-    //   ' Video elegido: ' + $('#videos option:selected').text()
-  
-    //   $('#resultado1').html(resultado)
-    // })
-  
   })
 
 //BLOQUEO Y DESBLOQUEO DE ESTADO DE CUENTA
@@ -74,7 +67,32 @@ $(document).ready(function() {
           direccion:$("#dir_1"). val(),
           colonia:$("#col_1"). val(),
           codigoPostal:$("#cp_1"). val(),
+
         }; 
+
+        if (dataForm.rfc === "") {
+          alert("el campo rfc esta Vacio");
+          return false;
+        }else if (dataForm.razon === "") {
+          alert("el campo razon social esta Vacio");
+          return false;
+        }else if (dataForm.email === "") {
+          alert("el campo rfc esta Vacio");
+          return false;
+        }
+
+      else  if ($('#select').val().trim() === '') {
+          alert('Debe seleccionar una opción');
+  
+      } 
+      else  if ($('#cfdi').val().trim() === '') {
+        alert('Debe seleccionar una opción');
+      } 
+      else  if ($('#metodoPago').val().trim() === '') {
+        alert('Debe seleccionar una opción');
+      } 
+
+
 
    console.log(dataForm.rfc);
    $.post('insertar.php', dataForm, function(response){
@@ -84,6 +102,39 @@ $(document).ready(function() {
   });
 });
 
+// insertar los datos de la factura producto
+$(document).ready(function() {   
+  $('#formID').on('submit', function(e) {
+    $(".filas").each(function(index) {
+    let id = $(this).attr('taskId')
+console.log(id);
+
+         const dataForm ={
+           razon:$("#name_1"). val(),
+           producto:$("#producto_"+id).val(),
+           nombre:$("#nombre_"+id).val(),
+           costoUnitario:$("#costoUnitario_"+id).val(),
+           //formaPago:$("#select"). val(),
+           //numCuenta:$("#numeroCuenta"). val(),
+           //CFDI:$("#cfdi"). val(),
+           //formaPago:$("#metodoPago"). val(),
+           
+          // Datos opcionales
+          //  estado:$("#cbx_estados"). val(),
+          //  municipio:$("#cbx_municipio"). val(),
+          //  direccion:$("#dir_1"). val(),
+          //  colonia:$("#col_1"). val(),
+          //  codigoPostal:$("#cp_1"). val(),
+         }; 
+ 
+    console.log(dataForm.producto);
+    $.post('insertar_producto.php', dataForm, function(response){
+            console.log(response)
+      });
+     e.preventDefault();
+   });
+ });
+})
 
 // Busqueda de rfc por 
 
@@ -247,23 +298,6 @@ $(document).ready(function(e){
 
 
 
-// validaciones
-$(document).ready(function () {
-  $(".formID").submit(function () {
-    var select = $("#select option:selected").val();
-    console.log(select)
-    if (select == null) {
-        $('.error').text("Seleccione una Casa de Apuestas");
-        return false;
-    } else {
-        $('.errors').hide();
-        alert('OK');
-        return true;
-    }
-    });
-
-})
-
 //solo numeros
 function solonumeros(e)
                     {
@@ -321,7 +355,7 @@ $(document).ready(function(){
     var cantidades = [];
     var precios = [];
     var descuentos = [];
-    var ivas = [];
+    //var ivas = [];
 
 
     var preciosTotal = [];
@@ -411,6 +445,7 @@ $(".table").on('change', function() {
 });
 })
 
+// <<<<<<< HEAD
 // Descuento General
 $(document).ready(function(){
   function actualizarTabla() {
@@ -482,3 +517,6 @@ $(".table").on('change', function() {
     actualizarTabla();
 });
 })
+// =======
+
+// >>>>>>> etapa1

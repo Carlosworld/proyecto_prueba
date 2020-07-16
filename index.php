@@ -1,6 +1,7 @@
 <?php include("db.php");?>
 <?php include('header.php');?>  
 
+
 <div class="container p-4">
     <div class="table-responsive table-bordered">
         <form id="formID" name="emp" method="post"> 
@@ -13,11 +14,10 @@
                 <tbody>
                     <tr class="tr_input">
                         <td><label style="clear: both;display: block;" for="rfc"><span>*</span>RFC</label>
-                        <input type="text" class="form-control form-control-sm username" id="username_1" name="rfc" onkeyup="this.value = this.value.toUpperCase();">
-                        
+                        <input type="text" class="form-control form-control-sm username" id="username_1" name="rfc" onkeyup="this.value = this.value.toUpperCase();"required>
                         </td>
 
-                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="name form-control form-control-sm" id="name_1" name="razon-social">
+                        <td colspan="4"><label style="clear: both;display: block;"><span>*</span>Razón Social</label><input type="text" class="name form-control form-control-sm" id="name_1" name="razon-social" required>
                         
                         </td>
 
@@ -34,18 +34,18 @@
 
 
 
-                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select" name="forma-pago" required><option value="1" selected="" id="1">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Forma de Pago</label><select class="form-control form-control-sm" id="select" name="forma-pago" required><option value="" selected="" id="">--Seleccionar--</option><option value="2" id="2">(01) Efectivo</option><option value="0" id="0'">(28) Tarjeta de Débito</option><option value="3" id="3">(02) Cheque</option></select></td>
 
 
                         <td><label style="clear: both;display: block;"><span>*</span>Número de Cuenta</label><input type="text" class="form-control form-control-sm" id="numeroCuenta" name="numero-cuenta" onkeypress="solonumeros(event);" disabled></td>
                         <td colspan="2"></td>
                     </tr>
                     <tr>
-                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm" id="cfdi" name="CFDI" required><option value="undefined" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
+                        <td><label style="clear: both;display: block;"><span>*</span>Uso del CFDI</label><select class="form-control form-control-sm" id="cfdi" name="CFDI" required><option value="" selected="">--Seleccionar Uso de CFDI</option><option value="G01">(G01) Adquisición de mercancias</option><option value="G03">(G03) Gastos en General</option></select></td>
 
 
                         <td><label style="clear: both;display: block;"><span>*</span>Método de Pago</label>
-                        <select class="form-control form-control-sm" id="metodoPago" name="metodo-pago" required><option value="undefined" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
+                        <select class="form-control form-control-sm" id="metodoPago" name="metodo-pago" required><option value="" selected="">--Seleccionar Forma de Pago--</option><option value="PUE">(PUE) Pago en una sola exhibición</option><option value="PPD">(PPD) Pago en parcialidades o diferido</option></select></td>
                         <td
                             colspan="3"></td>
                     </tr>
@@ -73,7 +73,7 @@
          
     </div>
     <div class="table-responsive table-bordered table-striped" id="tablaConceptos">
-            <table class="table">
+            <table class="table estiloLibre">
                 <thead>
                     <tr>
                         <th>Clave</th>
@@ -86,15 +86,14 @@
                         <th>Eliminar</th>
                     </tr>
                 </thead>
-                <tbody class="tbody">
+                <tbody class="tbody ">
                     <tr class="filas tr_input " taskId='1'>
                         
-                        <td><input type="text" class="producto form-control form-control-sm" id="producto_1"></td>
-
-
+                        <td><input type="text" class="fas fa-search producto form-control form-control-sm" id="producto_1" placeholder='buscar'></td>
+                        
                         <td><input type="text" class="nombre form-control form-control-sm" id="nombre_1"></td>
 
-                        <td><input type="text" class="monto cantidad_1 campoNumerico form-control form-control-sm" id="cantidad_1"  onkeypress="solonumeros(event);"></td>
+                        <td><input type="number" class="monto cantidad_1 campoNumerico form-control form-control-sm" id="cantidad_1"  onkeypress="solonumeros(event);"></td>
 
                          <!-- <td><input type="text" class="costoUnitario campoNumerico form-control form-control-sm" id="costoUnitario_1"></td>  -->
 
@@ -121,13 +120,13 @@
         
         </div>
 </div>
-        <div style="text-align: center;"><button class="btn btn-info" id="botonAgregarConcepto" type="submit" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
+        <div style="text-align: center;"class="p-4"><button class="btn btn-info" id="botonAgregarConcepto" type="submit" style="margin: auto;"><i class="fa fa-plus-square-o"></i>&nbsp;Agregar Concepto</button></div>
         <div class="table-responsive" style="width: 300px;float: right;">
             <table class="table">
                 <thead>
                     <tr></tr>
                 </thead>
-                <tbody>
+                <tbody  class="td_style">
                     <tr>
                         <td>Importe</td>
                         <td><p></p></td>
@@ -150,6 +149,7 @@
                     </tr>
                 </tbody>
             </table>
+            
         </form>  
     </div>
 </div>

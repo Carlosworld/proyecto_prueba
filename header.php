@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+   
     
     <link href=' assets/js/jquery-ui.min.css' type='text/css' rel='stylesheet' >
     <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="assets/js/jquery-ui.min.js" type="text/javascript"></script> 
-
-
+    <script src="assets/js/jquery-validate.min.js" type="text/javascript"></script> 
+    
   
   </head>
   <body>
