@@ -11,6 +11,8 @@ if($request == 1){
 
     $query = "SELECT * FROM datosfiscales WHERE orfc like'%".$search."%'";
     $result = mysqli_query($conn,$query);
+
+    
     
     while($row = mysqli_fetch_array($result) ){
         $response[] = array("value"=>$row['kcvedatosfiscales'],"label"=>$row['orfc']);
@@ -26,7 +28,9 @@ if($request == 2){
     $userid = $_POST['userid'];
     $sql = "SELECT * FROM datosfiscales WHERE kcvedatosfiscales=".$userid;
 
-    $result = mysqli_query($conn,$sql);
+    $sqlfactura = "SELECT * FROM factura WHERE kcvedatosfiscales=".$userid;
+
+    $factura = mysqli_query($conn,$sqlfactura);
 
     $users_arr = array();
 
@@ -40,6 +44,16 @@ if($request == 2){
 
         $users_arr[] = array("id" => $userid, "name" => $fullname,"email" => $email, "dir" =>$dir, "col" =>$col, "cp"=>$cp);
     }
+
+
+
+    
+    $sql = "INSERT INTO `factura` (`kcvedatosfiscales`) VALUES ('$userid')";
+
+    $result = mysqli_query($conn,$sql);
+
+
+
 
     // encoding array to json format
     echo json_encode($users_arr);
