@@ -28,6 +28,8 @@ if($request == 2){
     $userid = $_POST['userid'];
     $sql = "SELECT * FROM datosfiscales WHERE kcvedatosfiscales=".$userid;
 
+    $result = mysqli_query($conn,$sql);
+    
     $sqlfactura = "SELECT * FROM factura WHERE kcvedatosfiscales=".$userid;
 
     $factura = mysqli_query($conn,$sqlfactura);
@@ -45,12 +47,9 @@ if($request == 2){
         $users_arr[] = array("id" => $userid, "name" => $fullname,"email" => $email, "dir" =>$dir, "col" =>$col, "cp"=>$cp);
     }
 
+    $sqlfact = "INSERT INTO `factura` (`kcvedatosfiscales`) VALUES ('$userid')";
 
-
-    
-    $sql = "INSERT INTO `factura` (`kcvedatosfiscales`) VALUES ('$userid')";
-
-    $result = mysqli_query($conn,$sql);
+    $resultfacturas = mysqli_query($conn,$sqlfact);
 
 
 
