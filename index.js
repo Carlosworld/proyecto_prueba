@@ -285,19 +285,20 @@ $(document).ready(function(){
 // Borrador de filas
 
 $(document).ready(function(e){
+  
   $(document).on('click','.task-delete', function() {
     let element = $(this)[0].parentElement.parentElement;
     //let id = $(element).attr('taskId')
 
     // $.post('delete_product.php',{id},response)
-       event.preventDefault();
-    $(this).closest(element).remove();
-   
+      
+    $(this).closest(element).remove() /* remove the <br/> */
+    // .end() /* go back to what was found originally */
+    // .remove(); /* and remove */
+    
 })
+
 })
-
-
-
 //solo numeros
 function solonumeros(e)
                     {
@@ -444,6 +445,7 @@ $(".table").on('change', function() {
     actualizarTabla();
 });
 })
+<<<<<<< HEAD
 
 // <<<<<<< HEAD
 // Descuento General
@@ -520,3 +522,5 @@ $(".table").on('change', function() {
 // =======
 
 // >>>>>>> etapa1
+=======
+>>>>>>> etapa1
