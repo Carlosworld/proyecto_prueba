@@ -445,7 +445,6 @@ $(".table").on('change', function() {
     actualizarTabla();
 });
 })
-<<<<<<< HEAD
 
 // <<<<<<< HEAD
 // Descuento General
@@ -522,5 +521,3 @@ $(".table").on('change', function() {
 // =======
 
 // >>>>>>> etapa1
-=======
->>>>>>> etapa1
